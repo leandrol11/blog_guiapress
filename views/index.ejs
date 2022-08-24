@@ -1,0 +1,22 @@
+<%- include ("partials/head.ejs") %>
+
+    <body>
+        <%- include ("partials/homeNavbar.ejs") %>
+            <section class="container">
+                <div class="jumbotron">
+                    <% articles.forEach(article=> { %>
+                        <div class="article-home-list">
+                            <h2>
+                                <%= article.title %>
+                            </h2>
+                            <a href="/<%= article.slug %>" class="btn btn-success btn-home">Ver Artigo</a>
+                        </div>
+                        <% }) %>
+                </div>
+                <div class="prev-next">
+                    <a class="btn btn-primary" href="/articles/page/2">Próximo</a>
+                </div>
+            </section>
+    </body>
+
+    <%- include ("partials/footer.ejs") %>

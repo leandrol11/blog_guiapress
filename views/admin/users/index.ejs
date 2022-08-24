@@ -1,0 +1,48 @@
+<%- include ("../../partials/head.ejs") %>
+
+    <body>
+        <%- include ("../../partials/navbar.ejs") %>
+            <section class="container">
+                <h1 class="title">Usuários</h1>
+                <a class="btn btn-success" href="/admin/users/create">Criar Usuário</a>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% users.forEach(user=> { %>
+                            <tr>
+                                <td>
+                                    <%= user.id %>
+                                </td>
+                                <td>
+                                    <%= user.email %>
+                                </td>
+                                <td>
+                                    <a href="/admin/users/edit/<%= user.id %>" class="btn btn-primary">Editar</a>
+
+                                    <form class="form-list-categories" method="POST" action="/users/delete"
+                                        onsubmit="confirmDelete(event, this)">
+                                        <input type="hidden" name="id" value="<%= user.id %>">
+                                        <button class="btn btn-danger">Deletar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </section>
+    </body>
+    <script>
+        function confirmDelete(event, form) {
+            event.preventDefault()
+            let decision = confirm("Tem certeza que quer deletar?")
+            if (decision) {
+                form.submit()
+            }
+        }
+    </script>
+    <%- include ("../../partials/footer.ejs") %>

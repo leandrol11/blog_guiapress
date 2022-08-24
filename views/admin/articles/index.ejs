@@ -1,0 +1,57 @@
+<%- include ("../../partials/head.ejs") %>
+
+    <body>
+        <%- include ("../../partials/navbar.ejs") %>
+            <section class="container">
+                <h1 class="title">Artigos</h1>
+                <a class="btn btn-success" href="/admin/articles/new">Criar Artigo</a>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Slug</th>
+                            <th>Categoria</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% articles.forEach(article=> { %>
+                            <tr>
+                                <td>
+                                    <%= article.id %>
+                                </td>
+                                <td>
+                                    <%= article.title %>
+                                </td>
+                                <td>
+                                    <%= article.slug %>
+                                </td>
+                                <td>
+                                    <%= article.category.title %>
+                                </td>
+                                <td>
+                                    <a href="/admin/articles/edit/<%= article.id %>" class="btn btn-primary">Editar</a>
+
+                                    <form class="form-list-categories" method="POST" action="/articles/delete"
+                                        onsubmit="confirmDelete(event, this)">
+                                        <input type="hidden" name="id" value="<%= article.id %>">
+                                        <button class="btn btn-danger">Deletar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </section>
+    </body>
+    <script>
+        function confirmDelete(event, form) {
+            event.preventDefault()
+            let decision = confirm("Tem certeza que quer deletar?")
+            if (decision) {
+                form.submit()
+            }
+        }
+    </script>
+    <%- include ("../../partials/footer.ejs") %>

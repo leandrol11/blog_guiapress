@@ -1,0 +1,80 @@
+.container-form {
+    background-color: rgb(241, 234, 234);
+    width: 80%;
+    margin: 50px auto;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.title,
+.form,
+.options-title {
+    padding: 10px;
+}
+
+.title {
+    text-align: center;
+}
+
+.btn {
+    margin: 15px;
+}
+
+.form-list-categories {
+    display: inline
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+.options-title {
+    padding-top: 20px
+}
+
+.article-home-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.article-home-list h2,
+.btn-home {
+    padding: 15px;
+}
+
+.article,
+.article-home-list {
+    background-color: rgb(175, 169, 169);
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.article-title {
+    text-align: center;
+}
+
+.article-body,
+.article-title {
+    padding: 15px;
+    margin: 0;
+}
+
+.prev-next {
+    display: flex;
+    justify-content: center;
+}
+
+.admin {
+    display: flex;
+    justify-content: space-around;
+}
+
+.logout {
+    background-color: black;
+    border-radius: 5px;
+}
+
+.login {
+    border-radius: 5px;
+}

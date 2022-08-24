@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&family=Mouse+Memoirs&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+}
+
+html {
+    scroll-behavior: smooth;
+}

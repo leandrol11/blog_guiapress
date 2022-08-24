@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-danger">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="/"> GuiaPress</a>
+        <!-- Mobile -->
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <!-- NavBar -->
+        <div class="collapse navbar-collapse" id="nav-principal">
+            <ul class="navbar-nav ml-auto">
+                <% categories.forEach(category=> { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/category/<%= category.slug %>">
+                            <%= category.title %>
+                        </a>
+                    </li>
+                    <% }) %>
+                        <li class="nav-item">
+                            <a class="nav-link btn-primary login" href="/login">Entrar</a>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>

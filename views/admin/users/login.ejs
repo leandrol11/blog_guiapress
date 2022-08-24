@@ -1,0 +1,17 @@
+<%- include ("../../partials/head.ejs") %>
+
+    <body class="bg-dark">
+        <%- include ("../../partials/navbarLogin.ejs") %>
+            <section class="conatiner">
+                <div class="container-form">
+                    <h1 class="title">Login Admin</h1>
+                    <form class="form" method="POST" action="/authenticate">
+                        <input class="form-control" type="email" name="email" placeholder="Seu Email" value="">
+                        <input class="form-control" type="password" name="password" placeholder="Sua senha" value="">
+                        <button type="submit" class="btn btn-success">Entrar</button>
+                    </form>
+                </div>
+            </section>
+    </body>
+
+    <%- include ("../../partials/footer.ejs") %>
